@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import PillNav from './components/PillNav'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 function App() {
   const [theme, setTheme] = useState('dark')
   const [activeTab, setActiveTab] = useState('about')
+  const mainRef = useRef(null)
 
   useEffect(() => {
     const saved = localStorage.getItem('amon-theme')
@@ -16,6 +17,12 @@ function App() {
     setTheme(initial)
     document.documentElement.setAttribute('data-theme', initial)
   }, [])
+
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [activeTab])
 
   const toggleTheme = () => {
     const next = theme === 'light' ? 'dark' : 'light'
@@ -33,7 +40,7 @@ function App() {
 
   return (
     <div className="app-layout">
-      <main className="main-area">
+      <main className="main-area" ref={mainRef}>
         <div className="hero">
           <div className="hero-bg" />
           <div className="hero-overlay-gradient" />
