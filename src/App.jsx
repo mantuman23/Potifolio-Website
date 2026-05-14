@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import PillNav from './components/PillNav'
-import GameCanvas from './components/GameCanvas'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Notes from './pages/Notes'
@@ -35,15 +34,24 @@ function App() {
   return (
     <div className="app-layout">
       <main className="main-area">
-        <div className="hero-canvas">
-          <GameCanvas />
+        <div className="hero">
+          <div className="hero-content">
+            <h1 className="hero-title">Amon</h1>
+            <p className="hero-subtitle">Full-Stack Developer &mdash; building systems that work</p>
+            <p className="hero-description">
+              I care about clean architecture, pragmatic design, and shipping code that solves real problems.
+              Based in Dodoma, Tanzania.
+            </p>
+          </div>
         </div>
+
         <PillNav
           active={activeTab}
           onChange={setActiveTab}
           theme={theme}
           onToggleTheme={toggleTheme}
         />
+
         <div className="content">
           {tabs[activeTab]}
         </div>

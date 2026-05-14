@@ -1,18 +1,20 @@
 function About() {
   return (
     <div>
-      <h1>About</h1>
-      <p>
-        Full-stack developer focused on building systems that work. I care about clean architecture,
-        pragmatic design, and shipping code that solves real problems.
-      </p>
-      <p style={{ marginBottom: '1.5rem' }}>
-        Currently based in Dodoma, Tanzania. Studying Computer Science at the University of Dodoma.
-        Most of my work lives at the intersection of backend infrastructure and user-facing interfaces.
-      </p>
+      <div className="section">
+        <div className="section-label">about</div>
+        <p style={{ fontSize: '1.1rem', color: 'var(--fg)', lineHeight: 1.8 }}>
+          Full-stack developer focused on building systems that work. I care about clean architecture,
+          pragmatic design, and shipping code that solves real problems.
+        </p>
+        <p>
+          Currently based in Dodoma, Tanzania. Studying Computer Science at the University of Dodoma.
+          Most of my work lives at the intersection of backend infrastructure and user-facing interfaces.
+        </p>
+      </div>
 
       <div className="section">
-        <div className="section-label">whoami</div>
+        <div className="section-label">details</div>
         <table className="data-table">
           <tbody>
             <tr><td>Name</td><td>Amon</td></tr>
@@ -26,9 +28,9 @@ function About() {
 
       <div className="section">
         <div className="section-label">skills</div>
-        <div className="skills-row">
+        <div className="skills-grid">
           <div className="skill-group">
-            <div className="skill-label">languages</div>
+            <div className="skill-label">Languages</div>
             <div className="skill-tags">
               <span className="skill-tag">Python</span>
               <span className="skill-tag">JavaScript</span>
@@ -37,7 +39,7 @@ function About() {
             </div>
           </div>
           <div className="skill-group">
-            <div className="skill-label">backend</div>
+            <div className="skill-label">Backend</div>
             <div className="skill-tags">
               <span className="skill-tag">Spring Boot</span>
               <span className="skill-tag">Node.js</span>
@@ -45,14 +47,14 @@ function About() {
             </div>
           </div>
           <div className="skill-group">
-            <div className="skill-label">frontend</div>
+            <div className="skill-label">Frontend</div>
             <div className="skill-tags">
               <span className="skill-tag">React</span>
               <span className="skill-tag">HTML/CSS</span>
             </div>
           </div>
           <div className="skill-group">
-            <div className="skill-label">tools</div>
+            <div className="skill-label">Tools</div>
             <div className="skill-tags">
               <span className="skill-tag">Git</span>
               <span className="skill-tag">Docker</span>
@@ -65,12 +67,12 @@ function About() {
 
       <div className="section">
         <div className="section-label">philosophy</div>
-        <p>
+        <p style={{ fontSize: '1rem', color: 'var(--fg)', lineHeight: 1.8 }}>
           I believe software should be boring in the right ways and exciting in the right places.
           Boring infrastructure means it works without surprise. Exciting interfaces mean people
           actually want to use it. The gap between those two is where good engineering lives.
         </p>
-        <p style={{ marginBottom: 0 }}>
+        <p>
           I build for durability over novelty. The best code is the code you do not have to think about.
         </p>
       </div>

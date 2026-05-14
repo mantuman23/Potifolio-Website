@@ -1,13 +1,14 @@
 function Contact() {
   return (
     <div>
-      <h1>Contact</h1>
-      <p style={{ marginBottom: '1.5rem' }}>
-        Open to collaborations, questions, and interesting problems. The best way to reach me is email.
-      </p>
-
       <div className="section">
         <div className="section-label">contact</div>
+        <p style={{ fontSize: '1.05rem', color: 'var(--fg)' }}>
+          Open to collaborations, questions, and interesting problems. The best way to reach me is email.
+        </p>
+      </div>
+
+      <div className="section">
         <table className="data-table">
           <tbody>
             <tr>
@@ -28,7 +29,7 @@ function Contact() {
             </tr>
             <tr>
               <td>Status</td>
-              <td><span className="badge badge-ok">available</span></td>
+              <td><span className="badge badge-green">available</span></td>
             </tr>
           </tbody>
         </table>

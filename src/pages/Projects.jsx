@@ -6,7 +6,7 @@ function Projects() {
       year: '2025',
       role: 'Backend Developer',
       org: 'IPT Project, UDOM',
-      desc: 'An online coding platform that automates grading for programming assignments. Instructors create test cases, students submit code, and the platform grades submissions automatically against those cases. Handles sandboxed execution for C++, JavaScript, Java, and Python.',
+      desc: 'An online coding platform that automates grading for programming assignments. Instructors create test cases, students submit code, and the platform grades submissions automatically against those cases.',
       highlights: [
         'Rewrote legacy Java Servlet codebase to Spring Boot',
         'Built sandboxed code execution engine with timeout and memory limits',
@@ -23,7 +23,7 @@ function Projects() {
       year: '2024 \u2014 Present',
       role: 'Co-founder & Lead Developer',
       org: 'Xhubantu Inc.',
-      desc: 'An event-based social platform that combines event discovery, ticketing, and media sharing. Designed to move social interaction from feeds to physical gatherings. Includes real-time chat, event feed, and payment integration for ticket sales.',
+      desc: 'An event-based social platform that combines event discovery, ticketing, and media sharing. Designed to move social interaction from feeds to physical gatherings.',
       highlights: [
         'Architected full-stack platform from zero to production',
         'Built real-time messaging with WebSockets',
@@ -40,7 +40,7 @@ function Projects() {
       year: '2024',
       role: 'Solo Developer',
       org: 'Open Source',
-      desc: 'A RESTful API aggregating publicly available government datasets for Tanzania. Provides normalized access to census data, regional statistics, and economic indicators. Used by 3 university research projects.',
+      desc: 'A RESTful API aggregating publicly available government datasets for Tanzania. Provides normalized access to census data, regional statistics, and economic indicators.',
       highlights: [
         'Aggregated 15+ government datasets into unified schema',
         'Built rate-limiting and caching for 10k+ daily requests',
@@ -68,81 +68,46 @@ function Projects() {
       url: 'https://dodoma-transit.web.app',
       github: 'https://github.com/amon/dodoma-transit',
     },
-    {
-      title: 'Portfolio v2',
-      status: 'active',
-      year: '2025',
-      role: 'Designer & Developer',
-      org: 'Personal',
-      desc: 'This site. A modern portfolio with an interactive matrix-cascade hero, clean navigation, and a terminal aesthetic. Built to explore creative frontend techniques without heavy dependencies.',
-      highlights: [
-        'Custom Canvas API character cascade engine',
-        'Zero external UI libraries \u2014 pure CSS + React',
-        'Dark/light theme with CSS custom properties',
-        'Sub-100KB initial JS bundle',
-      ],
-      stack: 'React, Vite, Canvas API, CSS Grid',
-      url: '#',
-      github: 'https://github.com/amon/portfolio',
-    },
   ]
 
   const statusBadge = (s) => {
-    if (s === 'stable') return <span className="badge badge-ok">stable</span>
-    if (s === 'active') return <span className="badge badge-warn">active</span>
+    if (s === 'stable') return <span className="badge badge-green">stable</span>
+    if (s === 'active') return <span className="badge badge-yellow">active</span>
     return <span className="badge">{s}</span>
   }
 
   return (
     <div>
-      <h1>Projects</h1>
-      <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
-        Selected work. Systems built under real constraints.
-      </p>
+      <div className="section">
+        <div className="section-label">projects</div>
+        <p>Selected work. Systems built under real constraints.</p>
+      </div>
 
       {projects.map((p, i) => (
         <div className="card" key={i}>
           <div className="card-header">
-            <span>{p.title.toLowerCase()}</span>
-            <span style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ fontSize: '0.7rem', color: 'var(--muted)', fontWeight: 400 }}>{p.year}</span>
-              {statusBadge(p.status)}
-            </span>
+            <div>
+              <div className="card-title">{p.title}</div>
+              <div className="card-meta">{p.role} &middot; {p.org} &middot; {p.year}</div>
+            </div>
+            {statusBadge(p.status)}
           </div>
-          <div className="card-body">
-            <div style={{ fontSize: '0.82rem', color: 'var(--muted)', marginBottom: '0.7rem' }}>
-              {p.role} &bull; {p.org}
-            </div>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1rem' }}>
-              {p.desc}
-            </p>
-
-            <div style={{ marginBottom: '1rem' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--muted)', fontWeight: 600, marginBottom: '0.5rem', letterSpacing: '0.02em' }}>
-                Highlights
-              </div>
-              <ul className="list">
-                {p.highlights.map((h, hi) => (
-                  <li key={hi}>{h}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="code-block">
-              <span className="cmt">// stack</span><br />
-              <span className="val">{p.stack}</span>
-            </div>
-
-            <div style={{ display: 'flex', gap: '1.2rem', fontSize: '0.88rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-              <a href={p.url} target="_blank" rel="noreferrer">
-                [live] {p.url.replace('https://', '')}
+          <div className="card-desc">{p.desc}</div>
+          <ul className="card-highlights">
+            {p.highlights.map((h, hi) => (
+              <li key={hi}>{h}</li>
+            ))}
+          </ul>
+          <div className="card-stack">{p.stack}</div>
+          <div className="card-links">
+            <a href={p.url} target="_blank" rel="noreferrer">
+              {p.url.replace('https://', '')}
+            </a>
+            {p.github && (
+              <a href={p.github} target="_blank" rel="noreferrer">
+                source
               </a>
-              {p.github && (
-                <a href={p.github} target="_blank" rel="noreferrer">
-                  [source] {p.github.replace('https://', '')}
-                </a>
-              )}
-            </div>
+            )}
           </div>
         </div>
       ))}

@@ -22,41 +22,36 @@ function Notes() {
 
   return (
     <div>
-      <h1>Notes</h1>
-      <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
-        Essays and reflections on technology, design, and building.
-      </p>
+      <div className="section">
+        <div className="section-label">notes</div>
+        <p>Essays and reflections on technology, design, and building.</p>
+      </div>
 
-      <ul className="link-list">
-        {notes.map((note, i) => (
-          <li key={i}>
-            <a href="#" onClick={(e) => e.preventDefault()}>
-              <span>
-                <span style={{ fontWeight: 600, fontSize: '1rem', display: 'block', marginBottom: '0.2rem', color: 'var(--fg)' }}>
-                  {note.title}
-                </span>
-                <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>
-                  {note.preview}
-                </span>
-                <span style={{ display: 'flex', gap: '0.4rem', marginTop: '0.4rem' }}>
-                  {note.tags.map((t) => (
-                    <span className="badge" key={t}>{t}</span>
-                  ))}
-                </span>
-              </span>
-              <span className="link-meta">{note.date}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      {notes.map((note, i) => (
+        <div className="note-item" key={i}>
+          <div className="note-item-title">{note.title}</div>
+          <div className="note-item-preview">{note.preview}</div>
+          <div className="note-item-footer">
+            <div className="note-item-tags">
+              {note.tags.map((t) => (
+                <span className="note-tag" key={t}>{t}</span>
+              ))}
+            </div>
+            <span className="note-item-date">{note.date}</span>
+          </div>
+        </div>
+      ))}
 
-      <div className="card" style={{ marginTop: '1.5rem' }}>
-        <div className="card-header">drafts</div>
-        <div className="card-body">
-          <p style={{ fontSize: '0.9rem', color: 'var(--muted)', lineHeight: 1.6, marginBottom: 0 }}>
-            Several drafts in progress. Writing is thinking, and thinking takes time.
-            Essays are published when they are ready, not when a schedule demands it.
-          </p>
+      <div className="section" style={{ marginTop: '2.5rem' }}>
+        <div className="section-label">drafts</div>
+        <p style={{ marginBottom: '0.8rem' }}>
+          Several drafts in progress. Writing is thinking, and thinking takes time.
+          Essays are published when they are ready, not when a schedule demands it.
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+          <span style={{ fontSize: '0.88rem', color: 'var(--muted)' }}>~ essay on distributed systems patterns in practice</span>
+          <span style={{ fontSize: '0.88rem', color: 'var(--muted)' }}>~ reflections on teaching programming to beginners</span>
+          <span style={{ fontSize: '0.88rem', color: 'var(--muted)' }}>~ building for resilience in low-resource environments</span>
         </div>
       </div>
     </div>
