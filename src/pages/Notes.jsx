@@ -22,20 +22,8 @@ function Notes() {
 
   return (
     <div>
-      <div className="prompt-line">
-        <span className="prompt">
-          <span className="prompt-user">amon</span>
-          <span className="prompt-arrow">@</span>
-          <span className="prompt-host">portfolio</span>
-          <span className="prompt-arrow">:</span>
-          <span className="prompt-path">~/notes</span>
-          <span className="prompt-arrow">$</span>
-        </span>
-        <span>cat notes.md</span>
-        <span className="blink">_</span>
-      </div>
-
-      <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+      <h1>Notes</h1>
+      <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
         Essays and reflections on technology, design, and building.
       </p>
 

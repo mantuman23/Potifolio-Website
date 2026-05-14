@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import SidebarNav from './components/SidebarNav'
+import PillNav from './components/PillNav'
 import GameCanvas from './components/GameCanvas'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -34,20 +34,19 @@ function App() {
 
   return (
     <div className="app-layout">
-      <SidebarNav
-        active={activeTab}
-        onChange={setActiveTab}
-        theme={theme}
-        onToggleTheme={toggleTheme}
-      />
       <main className="main-area">
         <div className="hero-canvas">
           <GameCanvas />
         </div>
+        <PillNav
+          active={activeTab}
+          onChange={setActiveTab}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+        />
         <div className="content">
           {tabs[activeTab]}
         </div>
-        <div className="page-blur" />
       </main>
     </div>
   )

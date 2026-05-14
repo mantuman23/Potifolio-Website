@@ -20,7 +20,7 @@ function Projects() {
     {
       title: 'Xhubantu',
       status: 'active',
-      year: '2024 — Present',
+      year: '2024 \u2014 Present',
       role: 'Co-founder & Lead Developer',
       org: 'Xhubantu Inc.',
       desc: 'An event-based social platform that combines event discovery, ticketing, and media sharing. Designed to move social interaction from feeds to physical gatherings. Includes real-time chat, event feed, and payment integration for ticket sales.',
@@ -77,7 +77,7 @@ function Projects() {
       desc: 'This site. A modern portfolio with an interactive matrix-cascade hero, clean navigation, and a terminal aesthetic. Built to explore creative frontend techniques without heavy dependencies.',
       highlights: [
         'Custom Canvas API character cascade engine',
-        'Zero external UI libraries — pure CSS + React',
+        'Zero external UI libraries \u2014 pure CSS + React',
         'Dark/light theme with CSS custom properties',
         'Sub-100KB initial JS bundle',
       ],
@@ -95,20 +95,8 @@ function Projects() {
 
   return (
     <div>
-      <div className="prompt-line">
-        <span className="prompt">
-          <span className="prompt-user">amon</span>
-          <span className="prompt-arrow">@</span>
-          <span className="prompt-host">portfolio</span>
-          <span className="prompt-arrow">:</span>
-          <span className="prompt-path">~/projects</span>
-          <span className="prompt-arrow">$</span>
-        </span>
-        <span>ls -la</span>
-        <span className="blink">_</span>
-      </div>
-
-      <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+      <h1>Projects</h1>
+      <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
         Selected work. Systems built under real constraints.
       </p>
 
@@ -140,13 +128,12 @@ function Projects() {
               </ul>
             </div>
 
-            <div className="term-block">
-              <span className="term-comment">// stack</span>
-              <br />
-              <span className="term-val">{p.stack}</span>
+            <div className="code-block">
+              <span className="cmt">// stack</span><br />
+              <span className="val">{p.stack}</span>
             </div>
 
-            <div style={{ display: 'flex', gap: '1.2rem', fontSize: '0.88rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '1.2rem', fontSize: '0.88rem', flexWrap: 'wrap', marginTop: '1rem' }}>
               <a href={p.url} target="_blank" rel="noreferrer">
                 [live] {p.url.replace('https://', '')}
               </a>
