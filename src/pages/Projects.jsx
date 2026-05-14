@@ -16,6 +16,7 @@ function Projects() {
       stack: 'Spring Boot, Java, Supabase, Fly.io, Docker',
       url: 'https://codert.netlify.app',
       github: 'https://github.com/amon/codert',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
     },
     {
       title: 'Xhubantu',
@@ -33,6 +34,7 @@ function Projects() {
       stack: 'React, Node.js, PostgreSQL, Redis, Socket.io',
       url: 'https://xhubantu.com',
       github: null,
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
     },
     {
       title: 'Tanzania Open Data API',
@@ -50,6 +52,7 @@ function Projects() {
       stack: 'Python, FastAPI, PostgreSQL, Redis, Nginx',
       url: 'https://api.tzdata.dev',
       github: 'https://github.com/amon/tz-open-data',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
     },
     {
       title: 'Dodoma Transit',
@@ -67,6 +70,7 @@ function Projects() {
       stack: 'React, Firebase, Mapbox GL, TensorFlow.js',
       url: 'https://dodoma-transit.web.app',
       github: 'https://github.com/amon/dodoma-transit',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
     },
   ]
 
@@ -85,6 +89,7 @@ function Projects() {
 
       {projects.map((p, i) => (
         <div className="card" key={i}>
+          <img className="card-image" src={p.image} alt={p.title} loading="lazy" />
           <div className="card-header">
             <div>
               <div className="card-title">{p.title}</div>

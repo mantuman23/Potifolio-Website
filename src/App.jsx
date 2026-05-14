@@ -35,9 +35,11 @@ function App() {
     <div className="app-layout">
       <main className="main-area">
         <div className="hero">
+          <div className="hero-bg" />
+          <div className="hero-overlay-gradient" />
           <div className="hero-content">
             <h1 className="hero-title">Amon</h1>
-            <p className="hero-subtitle">Full-Stack Developer &mdash; building systems that work</p>
+            <p className="hero-subtitle">Full-Stack Developer — building systems that work</p>
             <p className="hero-description">
               I care about clean architecture, pragmatic design, and shipping code that solves real problems.
               Based in Dodoma, Tanzania.
